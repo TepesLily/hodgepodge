@@ -1,0 +1,219 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    --def-txt: 'hi, ';
+}
+
+.header {
+    background: #262626;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: rgba(191, 102, 250, 0.822);
+    text-decoration: none;
+}
+
+.navbar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.nav_menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.nav_branding {
+    font-style: 2rem;
+}
+
+.nav_link {
+    transition: 0.7s ease;
+    /* эффект для hover 
+    переходное состояние с затуханием (ease) длительность применения эффекта 0.7с 
+    в них входит и затухание !*/
+}
+
+.nav_link:hover {
+    color: #FF9900;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: rgba(191, 102, 250, 0.822);
+}
+
+@media(max-width:768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translate(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translate(-8px) rotate(-45deg);
+    }
+
+    .nav_menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #262626;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .nav_item {
+        margin: 16px 0;
+    }
+
+    .nav_menu.active {
+        left: 0;
+    }
+}
+
+/* _______________________________________ */
+.box {
+    margin-top: 40px;
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: #0000FF;
+    transition: width 2s, height 2s, background-color 2s, transform 2s;
+}
+
+.box:hover {
+    background-color: #FFCCCC;
+    width: 200px;
+    height: 200px;
+    transform: scaleX(-1);
+}
+
+.name {
+    border: #FFCCCC;
+    width: 100px;
+    height: 100px;
+}
+
+.name:hover::after {
+    content: var(--def-txt)'Лилия';
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 580px;
+}
+
+.wrap {
+    width: 120px;
+    height: 120px;
+    background: #E6E0CA;
+    display: inline-block;
+    margin: 80px;
+}
+
+h3 {
+    margin: 0;
+    text-align: center
+}
+
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.element {
+    width: 120px;
+    height: 120px;
+    color: white;
+    text-align: center;
+    line-height: 120px;
+    -webkit-animation: rotate 6s linear infinite;
+    animation: rotate 6s linear infinite;
+}
+
+.element-1 {
+    background: #FFCC00;
+}
+
+.element-2 {
+    background: #FF9900;
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+}
+
+.element-3 {
+    background: #875678;
+    -webkit-transform-origin: 110% 110%;
+    -ms-transform-origin: 110% 110%;
+    transform-origin: 110% 110%;
+}
+
+.element-4 {
+    background: #00E4F6;
+    -webkit-transform-origin: 50px 50px;
+    -ms-transform-origin: 50px 50px;
+    transform-origin: 50px 50px;
+}
+
+/* анимация */
+@keyframes skew {
+    50% {
+        transform: skew(0deg, 30deg);
+    }
+}
+
+.box_skew {
+    width: 200px;
+    height: 200px;
+    background: #875678;
+}
+
+.box_skew {
+
+    animation: skew 4s linear infinite;
+}
