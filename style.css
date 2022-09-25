@@ -221,6 +221,9 @@ h3 {
 /* ___________________________ */
 /* hole */
 /* ______________________________ */
+body {
+    background-color: #f7f6f4;
+}
 
 .hole {
     height: 75px;
@@ -241,7 +244,7 @@ h3 {
 .hole__link {
     display: block;
     opacity: 0%;
-    color: #5ba771;
+    color: #dfdbc7;
     transition: all 2s ease-in-out;
 }
 
@@ -259,11 +262,26 @@ h3 {
 }
 
 .hole.clicked {
-    height: 100vh;
-    width: 100vw;
+    height: 400vh;
+    width: 400vw;
     border-radius: 0%;
 }
 
 .hole__link.clicked {
     display: none;
+}
+
+.star_field {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0%;
+    z-index: -10;
+}
+
+.star_field.clicked {
+    z-index: 100;
+    transition: all 2s ease-in-out;
+    opacity: 100%;
 }
