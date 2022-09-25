@@ -6,65 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>hole</title>
 </head>
 
 <body>
     <div class="hole_container">
         <div class="hole">
-            <a href="#" class="hole__link">Continue?</a>
+            <a href="#" class="hole__link">Продолжить?</a>
         </div>
     </div>
 
     <!-- script of stars by https://excessivelyadequate.com/posts/starfield.html -->
     <canvas class="star_field" id="starfield" width="100vw" height="100vh"></canvas>
-    <script>
-        var canvas = document.getElementById("starfield");
-        var w = document.body.offsetWidth;
-        var h = document.body.offsetHeight;
-        if (window.devicePixelRatio) {
-            var dpr = window.devicePixelRatio;
-            canvas.style.width = w + "px";
-            canvas.style.height = h + "px";
-            w = w * dpr;
-            h = h * dpr;
-        }
-        canvas.setAttribute("width", w);
-        canvas.setAttribute("height", h);
-        var c = canvas.getContext("2d");
-        rand = function () { return (Math.random() - 0.5) * (Math.random() - 0.5) * Math.random() };
-        var cx = w / 2;
-        var cy = h / 2;
-        var count = 170;
-        var stars = [];
-        for (var i = 0; i < count; i++) {
-            var sx = cx + rand() * w;
-            var sy = cy + rand() * h;
-            var s = [sx, sy];
-            stars.push(s);
-        }
-        var fps = 50;
-        setInterval(function () {
-            c.clearRect(0, 0, w, h);
-            for (var i = 0; i < stars.length; i++) {
-                var x = stars[i][0];
-                var y = stars[i][1];
-                var r = 0.005 * (Math.sqrt(Math.pow(x - cx, 2) + Math.pow(y - cy, 2)));
-                c.beginPath();
-                c.arc(x, y, r, 0, 2 * Math.PI, false);
-                c.fillStyle = "white";
-                c.fill();
-                var nx = x + (x - cx) * 0.025;
-                var ny = y + (y - cy) * 0.025;
-                stars[i] = [nx, ny];
-                if (x < -100 || x > w + 100 || y < -100 || y > h + 100) {
-                    x = cx + rand() * w / 10;
-                    y = cy + rand() * w / 10;
-                    stars[i] = [x, y];
-                }
-            }
-        }, 1000 / fps);
-    </script>
     <script src="hole_script.js"></script>
 </body>
 
